@@ -5,20 +5,20 @@
 # clicking the "RSS" button at the bottom of the page.
 
 # url for "Currently reading":
-url="https://www.goodreads.com/review/list_rss/105006095?key=P_HhmmxjM6_vnVCBTApHhsL5lrN4ygoN9aTiP_sPxCP2cdda&shelf=currently-reading"
+url="https://www.goodreads.com/url-to-your-rss-feed-shelf=currently-reading"
 # url for "Read":
-readurl="https://www.goodreads.com/review/list_rss/105006095?key=P_HhmmxjM6_vnVCBTApHhsL5lrN4ygoN9aTiP_sPxCP2cdda&shelf=read"
+readurl="https://www.goodreads.com/url-to-your-rss-feed-shelf=read"
 
 # Enter the path to your Vault
-vaultpath="$HOME/Dropbox/Vault"
-#vaultpath="$HOME/Desktop/Vault"
+vaultpath="Path/to/your/vault"
+
 
 # Assign times to variables
 year=$(date +%Y)
 nummonth=$(date +%m)
 month=$(date +%B)
 
-# Grab the data from CURRENTLY-READING feed and format it
+# This grabs the data from the currently reading rss feed and formats it
 IFS=$'\n' feed=$(curl --silent "$url" | grep -E '(title>|book_large_image_url>|author_name>|book_published>|book_id>)' | \
 sed -e 's/<!\[CDATA\[//' -e 's/\]\]>//' \
 -e 's/Joschua.s bookshelf: currently-reading//' \
@@ -57,19 +57,6 @@ do
 done
 
 
-# Delete elements that were found in output.txt
-#  for (( i = 0 ; i < ${savedlength} ; i++ ))
-#    do
-#      if grep -Fxq "${arr[$i]}" output.txt
-#        then
-#          # code if found
-#          unset arr[$i]
-#         #else
-#         # code if not found
-#      fi
-#    done
-
-# Delete elements found in existing notes
 # Get the amount of books by dividing array by 5
 bookamount=$( expr "${#arr[@]}" / 5)
 
@@ -82,8 +69,7 @@ do
   bookid=${arr[$( expr "$counter" + 1)]}
 
 # Check if book already exists in note by bookid
-    #if find "${vaultpath}" -type f -name "*.md" -exec grep -qn "${bookid}" {} \+
-    # if grep -Fxq "${bookid}" -r "${vaultpath}/"
+    
     if grep -q "${bookid}" -r "${vaultpath}"
       then
         # code if found
@@ -165,7 +151,7 @@ then
   \* Year read: #read${year}" "$fname"
   sed -i '' "/Year read: #read${year}/ a\\
   \* Month read: [[${year}-${nummonth}-${month}|${month} ${year}]]" "$fname"
-  sed -i '' -e 's/#currently-reading/#outline \/ #welcome/' "$fname"
+  sed -i '' -e 's/#currently-reading/#read/' "$fname"
 
   # Grab the name of the changed book
   fname=$(echo ${fname} | sed 's/^.*\///' | sed 's/\.[^.]*$//')
