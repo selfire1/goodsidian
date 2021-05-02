@@ -1,5 +1,5 @@
-# Goodsidian
-Goodsidian takes updates to your shelves on [Goodreads](https://www.goodreads.com/) and formats them to a note in[Obsidian](https://obsidian.md/).
+# Goodsidian 
+Goodsidian takes updates to your shelves on [Goodreads](https://www.goodreads.com/) and formats them to a note in [Obsidian](https://obsidian.md/).
 
 ## Overview
 Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss feeds. That data then gets formatted and creates (if a new book) or updates (if book is read) a note in your Obsidian vault.
@@ -9,7 +9,7 @@ Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss 
 
 **Disclaimer**: Never run a script without knowing what it does. Make sure you understand the script and back up your vault. I use this script on my own vault but cannot guarantee no data losses or unintended changes.
 
-If you find value in this resource, consider sponsoring my next book on Patreon.
+If you find value in this resource, consider sponsoring my next read on Patreon.
 
 ## Setting up the script
 ## Variables
