@@ -1,13 +1,17 @@
 # Goodsidian
-A [Goodreads](https://www.goodreads.com/) to [Obsidian](https://obsidian.md/) script.
+Goodsidian takes updates to your shelves on [Goodreads](https://www.goodreads.com/) and formats them to a note in[Obsidian](https://obsidian.md/).
 
 ## Overview
 Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss feeds. That data then gets formatted and creates (if a new book) or updates (if book is read) a note in your Obsidian vault.
+
+![Goodsidian overview picture](https://github.com/selfire1/goodsidian/blob/master/images/g-to-obs.png?raw=true)
+
 
 **Disclaimer**: Never run a script without knowing what it does. Make sure you understand the script and back up your vault. I use this script on my own vault but cannot guarantee no data losses or unintended changes.
 
 ## Setting up the script
 ## Variables
+You can find the url to your Goodreads RSS feed by navigating to one of your shelfes and clicking the "RSS" button at the bottom of the page.
 * for `url` enter the Goodreads rss url for the "currently-reading" shelf
 * for `readurl` enter the Goodreads rss url for the "read" shelf
 * for `vaultpath` enter the path to your vault
@@ -18,6 +22,8 @@ Open your Goodreads rss feed. It will say something like "Joschua's bookshelf" i
 ## Adapt your format
 ### Currently reading
 For a book that's being currently read the default output will look like this:
+
+![Format of a currently reading book note](https://github.com/selfire1/goodsidian/blob/master/images/reading%20example.png?raw=true)
 
 For your use case you will surely want to change this. You can do so with the following variables:
 * `${title}`: Self-explanatory. The title.
