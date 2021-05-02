@@ -9,6 +9,8 @@ Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss 
 
 **Disclaimer**: Never run a script without knowing what it does. Make sure you understand the script and back up your vault. I use this script on my own vault but cannot guarantee no data losses or unintended changes.
 
+If you find value in this resource, consider sponsoring my next book on Patreon.
+
 ## Setting up the script
 ## Variables
 You can find the url to your Goodreads RSS feed by navigating to one of your shelfes and clicking the "RSS" button at the bottom of the page.
