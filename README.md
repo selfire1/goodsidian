@@ -12,6 +12,8 @@ Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss 
 If you find value in this resource, consider sponsoring my next read on Patreon.
 
 ## Setting up the script
+This master branch of this script is written for bash on MacOS. Thanks to [bboerzel](https://github.com/selfire1/goodsidian/issues/1)'s contribution you can find the script for linux bash on [another branch](https://github.com/selfire1/goodsidian/tree/linux-bash).
+
 ## Variables
 You can find the url to your Goodreads RSS feed by navigating to one of your shelfes and clicking the "RSS" button at the bottom of the page.
 * for `url` enter the Goodreads rss url for the "currently-reading" shelf
