@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Enter urls to your goodreads rss feed below.
 # You can find it by navigating to one of your goodreads shelves and
@@ -95,7 +95,7 @@ unset new_array
 bookamount=$( expr "${#arr[@]}" / 5)
 
 if (( "$bookamount" == 0 )); then
-  osascript -e "display notification \"No new books found.\" with title \"Currently-reading: No update\""
+  echo "display notification \"No new books found.\" with title \"Currently-reading: No update\""
 fi
 
 # Start the loop for each book
@@ -119,7 +119,7 @@ cleantitle=$(echo "${title}" | sed -e 's/\///' -e 's/:/ –/' -e 's/#//')
 
   if [[ "$cleantitle" == "" ]];
   then
-    osascript -e "display notification \"Failed to create note due to empty array.\" with title \"Error!\""
+    echo "display notification \"Failed to create note due to empty array.\" with title \"Error!\""
   else
     echo "---
 bookid: ${bookid}
@@ -135,7 +135,7 @@ links: [[Books MOC]]
 * Year published: [[${pub}]]" >> "${vaultpath}/${cleantitle}.md"
 
     # Display a notification when creating the file
-    osascript -e "display notification \"Booknote created!\" with title \"${cleantitle//\"/\\\"}\""
+    echo "display notification \"Booknote created!\" with title \"${cleantitle//\"/\\\"}\""
   fi
 
 done
@@ -155,10 +155,10 @@ then
 
   # Grab the name of the changed book
   fname=$(echo ${fname} | sed 's/^.*\///' | sed 's/\.[^.]*$//')
-  osascript -e "display notification \"${fname}\" with title \"Updated read books\""
+  echo "display notification \"${fname}\" with title \"Updated read books\""
 else
  # code if not found: No new books
- osascript -e "display notification \"No new read books.\" with title \"Read: No update\""
+ echo "display notification \"No new read books.\" with title \"Read: No update\""
 fi
 
 for (( i = 0 ; i < ${#readarr[@]} ; i++ ))
@@ -185,7 +185,7 @@ do
         declare -i updatedbooks; updatedbooks+=1
         fname=$(echo ${fname} | sed 's/^.*\///' | sed 's/\.[^.]*$//')
         # Show notification
-        osascript -e "display notification \"${fname}\" with title \"Updated read books\""
+        echo "display notification \"${fname}\" with title \"Updated read books\""
       fi
   fi
 done
@@ -193,5 +193,5 @@ done
 # code if not found: No new books
 if [[ ${updatedbooks} = "" ]]
 then
-osascript -e "display notification \"No new read books.\" with title \"Read: No update\""
+echo "display notification \"No new read books.\" with title \"Read: No update\""
 fi
