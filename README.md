@@ -1,6 +1,11 @@
 # Goodsidian 
 Goodsidian takes updates to your shelves on [Goodreads](https://www.goodreads.com/) and formats them to a note in [Obsidian](https://obsidian.md/).
 
+## Help wanted! 🤝
+I'd love to turn this into a proper plugin for Obsidian but my TypeScript knowledge is pretty *lacking*. 
+
+If you'd like to collaborate/contribute on that, head to the [Goodsidian plugin](https://github.com/selfire1/goodsidian-plugin) repo and reach out!
+
 ## Overview
 Goodsidian extracts data from your "currently-reading" and "read" Goodreads rss feeds. That data then gets formatted and creates (if a new book) or updates (if book is read) a note in your Obsidian vault.
 
